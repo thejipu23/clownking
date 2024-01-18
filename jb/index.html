@@ -1,4 +1,4 @@
-<html>
+<html manifest="cache.manifest">
 <head>
 <title>GoldHEN (9.00)</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -55,6 +55,23 @@
     transform: translate(-50%, -50%);
   }
 </style>
+<script>
+window.applicationCache.ondownloading = function()
+{
+alert("Caching started! Press OK and check progress on the bottom of the page.")
+};
+window.applicationCache.onprogress = function(a)
+{
+document.getElementById("progresscon").style.display="block";
+document.getElementById("progressbarpc").innerHTML="<h3>Caching Status: "+(Math.round(100*(a.loaded/a.total)))+"% Completed</h3>";
+document.getElementById("progressbar").style.width=(Math.round(100*(a.loaded/a.total)))+"%";
+};
+window.applicationCache.oncached = window.applicationCache.onupdateready = function()
+{
+alert("Page cached successfully. Press OK.")
+document.getElementById("progresscon").style.display="none";
+};
+</script>
 <script>
   function allset() {
     document.getElementById("loader").style.display = "none";
