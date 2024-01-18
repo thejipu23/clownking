@@ -58,7 +58,7 @@
 <script>
 window.applicationCache.ondownloading = function()
 {
-alert("Caching started! Press OK and check progress on the bottom of the page.")
+alert("Caching started! Press OK and wait.")
 };
 window.applicationCache.onprogress = function(a)
 {
@@ -68,7 +68,7 @@ document.getElementById("progressbar").style.width=(Math.round(100*(a.loaded/a.t
 };
 window.applicationCache.oncached = window.applicationCache.onupdateready = function()
 {
-alert("Page cached successfully. Press OK.")
+alert("Page cached successfully. Press OK and Turn off Internet.")
 document.getElementById("progresscon").style.display="none";
 };
 </script>
