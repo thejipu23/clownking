@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html manifest="cache.manifest">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: #141313;
+            color: #fff;
+            background-size: cover;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .dropdown-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        select {
+            font-size: 16px; /* Ukuran font dropdown */
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        footer {
+	        color: #fff;
+            text-align: center;
+            padding: 1em;
+            bottom: 0;
+      	    margin: 20px auto;
+            max-width: 600px;
+      	    border-radius: 10px;
+      	    background-color: #000000;
+        }
+        .submit-button {
+            font-size: 16px; /* Ukuran font tombol submit */
+            font-weight: bold;
+            background-color: #000; /* Warna tombol submit */
+            color: #bdbd09;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease; /* Efek hover */
+            text-decoration: none;
+        }
+
+        .submit-button:hover {
+            background-color: #031d63; /* Warna tombol saat dihover */
+        }
+        #progresscon {
+	width:70%;
+	margin:0 auto;
+	background:#2a2a2a;
+	color:#fff;
+	border-radius:10px;
+	display:none;
+	text-align:center;
+}
+#progressbar {
+	width:0%;
+	height:40px;
+	background:#004098;
+	transition: all .5s linear;
+	border-radius:10px;
+}
+#progressbarpc {
+	position:absolute;
+    display:block;
+    width:50%;
+	margin:-10px;
+}
+    </style>
+    <title>Clown Host | PS4 9.00 Exploit</title>
+</head>
+<body>
+<script>
+window.applicationCache.ondownloading = function()
+{
+alert("Caching started! Press OK and check progress on the bottom of the page.")
+};
+window.applicationCache.onprogress = function(a)
+{
+document.getElementById("progresscon").style.display="block";
+document.getElementById("progressbarpc").innerHTML="<h3>Caching Status: "+(Math.round(100*(a.loaded/a.total)))+"% Completed</h3>";
+document.getElementById("progressbar").style.width=(Math.round(100*(a.loaded/a.total)))+"%";
+};
+window.applicationCache.oncached = window.applicationCache.onupdateready = function()
+{
+alert("Page cached successfully. Press OK.")
+document.getElementById("progresscon").style.display="none";
+};
+</script>
+ <div style="text-align: center;">
+	<img src="assets/lohgo2.png" />
+</div>
+    <h2><center>Select GoldHEN Version:</center></h2>
+    <div class="dropdown-container">
+        <select id="selectOptions">
+            <option value="jb.html#p0=payloads/mira-900.js&p1=payloads/goldhen-2.4b14.js">GoldHEN 2.4b14</option>
+            <option value="jb.html#p0=payloads/mira-900.js&p1=payloads/goldhen-2.3.js">GoldHEN 2.3</option>
+            <option value="jb.html#p0=payloads/mira-900.js&p1=payloads/goldhen-2.2.4-900.js">GoldHEN 2.2</option>
+        </select>
+        <p><button class="submit-button" id="submitButton">Start</button></p>
+        <p><button class="submit-button"><a style="text-decoration:none; color:#fff;" href="jb.html#p0=payloads/mira-900.js&p1=payloads/ftp.js">FTP</a></button>
+            <button class="submit-button"><a style="text-decoration:none; color:#fff;" href="jb.html#p0=payloads/mira-900.js&p1=payloads/enable-updates-900.js">Enable Updates</a></button>
+        <button class="submit-button"><a style="text-decoration:none; color:#fff;" href="jb.html#p0=payloads/mira-900.js&p1=payloads/disable-updates-900.js">Disable Updates</a></button>
+        <button class="submit-button"><a style="text-decoration:none; color:#fff;" href="jb.html#p0=payloads/mira-900.js&p1=payloads/app-2-usb-900.js">App2USB</a></button></p>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var submitButton = document.getElementById('submitButton');
+            var selectOptions = document.getElementById('selectOptions');
+
+            submitButton.addEventListener('click', function () {
+                var selectedOption = selectOptions.options[selectOptions.selectedIndex];
+                if (selectedOption) {
+                    var targetUrl = selectedOption.value;
+                    if (targetUrl) {
+                        window.location.href = targetUrl;
+                    }
+                }
+            });
+        });
+    </script>
+<footer>
+  <b style="color: yellow;">Compiled by</b>: Clown King
+  <p><b style="color: yellow;">Credits</b>: PS4Linux, Sleirsgoevy, ChendoChap, and many more for PS-JB scene.</p>
+  </footer>
+</body>
+</html>
