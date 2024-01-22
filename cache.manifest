@@ -3,6 +3,7 @@ CACHE MANIFEST
 CACHE:
 cache.manifest
 index.html
+/jailbreak
 jailbreak/assets/lohgo.png
 jailbreak/assets/favicon.ico
 jailbreak/assets/style.css
@@ -35,6 +36,7 @@ jailbreak/payloads/whos-that-southbridge.js
 jailbreak/webkit-9.00/exploit.js
 jailbreak/webkit-9.00/malloc.js
 jailbreak/webkit-9.00/rop/rop.js
+/jb
 jb/index.html
 jb/int64.js
 jb/kexploit.js
