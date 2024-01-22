@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html manifest="cache.manifest">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -78,6 +78,23 @@
     </style>
     <title>Clown Host | PS4 9.00 Exploit</title>
 </head>
+<script>
+window.applicationCache.ondownloading = function()
+{
+alert("Caching started! Press OK and check progress on the bottom of the page.")
+};
+window.applicationCache.onprogress = function(a)
+{
+document.getElementById("progresscon").style.display="block";
+document.getElementById("progressbarpc").innerHTML="<h3>Caching Status: "+(Math.round(100*(a.loaded/a.total)))+"% Completed</h3>";
+document.getElementById("progressbar").style.width=(Math.round(100*(a.loaded/a.total)))+"%";
+};
+window.applicationCache.oncached = window.applicationCache.onupdateready = function()
+{
+alert("Page cached successfully. Press OK.")
+document.getElementById("progresscon").style.display="none";
+};
+</script>
 <body>
  <div style="text-align: center;">
 	<img src="assets/lohgo2.png" />
