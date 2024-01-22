@@ -39,8 +39,8 @@
         .submit-button {
             font-size: 16px; /* Ukuran font tombol submit */
             font-weight: bold;
-            background-color: #141313; /* Warna tombol submit */
-            color: #bdbd09;
+            background-color: #2a2a2a; /* Warna tombol submit */
+            color: #fff;
             padding: 12px 24px;
             border: none;
             border-radius: 5px;
@@ -50,7 +50,8 @@
         }
 
         .submit-button:hover {
-            background-color: #031d63; /* Warna tombol saat dihover */
+            background-color: #fff; /* Warna tombol saat dihover */
+	    color: #2a2a2a;
         }
         #progresscon {
 	width:70%;
@@ -89,10 +90,12 @@
             <option value="jb.html#p0=payloads/mira-900.js&p1=payloads/goldhen-2.2.4-900.js">GoldHEN 2.2</option>
         </select>
         <p><button class="submit-button" id="submitButton">Start</button></p></div>
-        <p style="text-align:center;"><button class="submit-button"><a style="text-decoration:none; color:#fff;" href="jb.html#p0=payloads/mira-900.js&p1=payloads/ftp.js">FTP</a></button>
+        <p style="text-align:center;">
+	<a href="jb.html#p0=payloads/mira-900.js&p1=payloads/ftp.js"><button class="submit-button">FTP</button></a>
         <button class="submit-button"><a style="text-decoration:none; color:#fff;" href="jb.html#p0=payloads/mira-900.js&p1=payloads/enable-updates-900.js">Enable Updates</a></button>
         <button class="submit-button"><a style="text-decoration:none; color:#fff;" href="jb.html#p0=payloads/mira-900.js&p1=payloads/disable-updates-900.js">Disable Updates</a></button>
-        <button class="submit-button"><a style="text-decoration:none; color:#fff;" href="jb.html#p0=payloads/mira-900.js&p1=payloads/app-2-usb-900.js">App2USB</a></button></p>
+        <button class="submit-button"><a style="text-decoration:none; color:#fff;" href="jb.html#p0=payloads/mira-900.js&p1=payloads/app-2-usb-900.js">App2USB</a></button>
+	</p>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             var submitButton = document.getElementById('submitButton');
