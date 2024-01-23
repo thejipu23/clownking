@@ -56,7 +56,7 @@
         #progresscon {
 	width:70%;
 	margin:0 auto;
-	background:#2a2a2a;
+	background:#000;
 	color:#fff;
 	border-radius:10px;
 	display:none;
@@ -74,7 +74,7 @@ window.applicationCache.onprogress = function(a)
 {
 document.getElementById("progresscon").style.display="block";
 document.getElementById("progressbarpc").innerHTML="<h3>Caching Status: "+(Math.round(100*(a.loaded/a.total)))+"% Completed</h3>";
-document.getElementById("progressbar").style.width=(Math.round(100*(a.loaded/a.total)))+"%";
+
 };
 window.applicationCache.oncached = window.applicationCache.onupdateready = function()
 {
@@ -88,7 +88,6 @@ document.getElementById("progresscon").style.display="none";
 </div>
 <div id="progresscon">
 <div id="progressbar">
-<span id="progressbarpc"></span>
 </div>
 </div>
     <h2><center>Select GoldHEN Version:</center></h2>
