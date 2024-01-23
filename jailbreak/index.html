@@ -61,6 +61,18 @@
 	border-radius:10px;
 	display:none;
 	text-align:center;
+	#progressbar {
+	width:0%;
+	height:40px;
+	background:#004098;
+	transition: all .5s linear;
+	border-radius:10px;
+}
+	#progressbarpc {
+	position:absolute;
+    display:block;
+    width:50%;
+	margin:-10px;
 }
     </style>
     <title>Clown Host | PS4 9.00 Exploit</title>
@@ -74,6 +86,7 @@ window.applicationCache.onprogress = function(a)
 {
 document.getElementById("progresscon").style.display="block";
 document.getElementById("progressbarpc").innerHTML="<h3>Caching Status: "+(Math.round(100*(a.loaded/a.total)))+"% Completed</h3>";
+document.getElementById("progressbar").style.width=(Math.round(100*(a.loaded/a.total)))+"%";
 
 };
 window.applicationCache.oncached = window.applicationCache.onupdateready = function()
@@ -88,6 +101,7 @@ document.getElementById("progresscon").style.display="none";
 </div>
 <div id="progresscon">
 <div id="progressbar">
+<span id="progressbarpc"></span>
 </div>
 </div>
     <h2><center>Select GoldHEN Version:</center></h2>
