@@ -12,7 +12,8 @@
             justify-content: center;
             height: 100vh;
             margin: 0;
-            font-family: 'Arial', sans-serif;
+            font-family: 'sans-serif';
+	    font-size: 20px;
         }
 
         .dropdown-container {
@@ -27,14 +28,15 @@
             margin-bottom: 10px;
         }
         footer {
-	        color: #fff;
+	    color: #fff;
             text-align: center;
             padding: 1em;
             bottom: 0;
+	    border: 2px solid white;
       	    margin: 20px auto;
-            max-width: 600px;
+            max-width: 650px;
       	    border-radius: 10px;
-      	    background-color: #141313;
+
         }
         .submit-button {
             font-size: 16px; /* Ukuran font tombol submit */
@@ -75,6 +77,27 @@
     	width:50%;
 	margin:-10px;
 }
+	.title {
+	font-size: 50px; 
+	color: #fff;
+	align-items: center;
+	justify-content: center;
+ 	display: flex;
+	font-weight: bold;
+	}
+        .element-dengan-garis {
+            border-bottom: 2px solid grey; /* Garis tepi 2 piksel dengan warna biru */
+            padding: 20px; /* Ruang dalam elemen */
+            margin: auto; /* Ruang luar elemen */
+	    text-align: center;
+	    max-width: 1285px;
+        }
+        #clock {
+	    font-size: 2em;
+            color: #fffb00;
+            float: right;
+	    font-weight: bold;
+      }
     </style>
     <title>Clown Host | PS4 9.00 Exploit</title>
 </head>
@@ -97,8 +120,8 @@ document.getElementById("progresscon").style.display="none";
 };
 </script>
 <body>
- <div style="text-align: center;">
-	<img src="assets/lohgo2.png" />
+<div class="element-dengan-garis">
+<span class="title" style="text-align:center;">Clown King Host 9.00 fw</span>
 </div>
 <div id="progresscon">
 <div id="progressbar">
@@ -135,6 +158,28 @@ document.getElementById("progresscon").style.display="none";
             });
         });
     </script>
+<!-- script jam -->
+<script>
+    function updateClock() {
+        var now = new Date();
+        var hours = now.getHours();
+        var minutes = now.getMinutes();
+        var seconds = now.getSeconds();
+
+        hours = (hours < 10) ? "0" + hours : hours;
+        minutes = (minutes < 10) ? "0" + minutes : minutes;
+        seconds = (seconds < 10) ? "0" + seconds : seconds;
+
+        var timeString = hours + ":" + minutes;
+
+        document.getElementById("clock").innerText = timeString;
+
+        setTimeout(updateClock, 1000); // Update every second
+    }
+
+    // Call the function to set the initial time
+    updateClock();
+</script>
 <footer>
   <b style="color: yellow;">Compiled by</b>: Clown King
   <p><b style="color: yellow;">Credits</b>: PS4Linux, Sleirsgoevy, ChendoChap, and many more for PS-JB scene.</p>
