@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clown Host - BETA</title>
+    <title>Clown King Host - BETA</title>
        <!-- Favicon -->
     <link rel="icon" href="" type="image/x-icon">
     <link rel="shortcut icon" href="" type="image/x-icon">
@@ -13,53 +13,35 @@
             font-family: 'Sans-Serif', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #1e272e;
+            background-color: #000;
             color: #ecf0f1;
             transition: background-color 0.5s, color 0.5s;
+	    font-family: 'sans-serif';
+	    font-size: 20px;
         }
-         .button {
-	  display: inline-block;
-      padding: 10px 20px;
-      font-size: 16px;
-      text-align: center;
-      text-decoration: none;
-      cursor: pointer;
-      border: 2px solid #3498db;
-      color: #3498db;
-      border-radius: 5px;
-      transition: background-color 0.3s, color 0.3s;
-        }
-        .button.hover {
-     background-color: #3498db;
-     color: #fff;
-        }
-        header {
-
-            color: #fff;
-            text-align: center;
-            padding: 1em;
-        }
-
-        main {
+                main {
             max-width: 800px;
             margin: 20px auto;
             padding: 20px;
-            background-color: #000000;
+	    border: 2px solid white;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
             border-radius: 10px;
             transition: background-color 0.5s;
+	    font-size: 25px;
         }
 
         section {
             margin-bottom: 20px;
+	    text-align: center;
         }
 
         footer {
 	    color: #fff;
+	    border: 2px solid white;
             text-align: center;
             padding: 1em;
             bottom: 0;
-      	    margin: 20px auto;
+      	    margin: auto;
             max-width: 800px;
       	    border-radius: 10px;
       	    background-color: #000000;
@@ -67,19 +49,19 @@
         .submit-button {
             font-size: 16px; /* Ukuran font tombol submit */
             font-weight: bold;
-            background-color: #2a2a2a; /* Warna tombol submit */
+            background-color: #bdb1b1; /* Warna tombol submit */
             color: #000;
             padding: 12px 24px;
             border: none;
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s ease; /* Efek hover */
-            text-decoration: none;
+
         }
 
         .submit-button:hover {
-            background-color: #043066; /* Warna tombol saat dihover */
-            color: #fff;
+            background-color: #ffffff; /* Warna tombol saat dihover */
+            color: #000;
         }
         h2 {
             color: #ffffff;
@@ -88,18 +70,41 @@
         a {
             color: #e74c3c;
         }
+	.title {
+	font-size: 30px; 
+	color: #fff;
+	align-items: center;
+	justify-content: center;
+ 	display: flex;
+	font-weight: bold;
+	}
+	.element-dengan-garis {
+            border-bottom: 2px solid grey; /* Garis tepi 2 piksel dengan warna biru */
+            padding: 20px; /* Ruang dalam elemen */
+            margin: auto; /* Ruang luar elemen */
+	    text-align: center;
+	    max-width: 1285px;
+        }
         #clock {
-            font-size: 2em;
-            color: #fffb00;
-            text-align: right;
-      ]
+            font-size: 30px;
+
+	    float: right;
+	    font-weight: bold;
+	}
+        #currentDate {
+	    font-size: 30px;
+	    float: left;
+	    font-weight: bold;
+
+        }
     </style>
 </head>
 <body>
-<header>
-    <b><div id="clock"></div></b>
-     <div style="text-align: center;">
-	<img src="/jailbreak/assets/lohgo.png" />
+<div class="element-dengan-garis">
+<span id="clock"></span>
+<span id="currentDate"></span>
+<span class="title" style="text-align:center;">Clown King Host - PS4 exploit</span>
+
 </div>
 <!-- script jam -->
 <script>
@@ -123,25 +128,36 @@
     // Call the function to set the initial time
     updateClock();
 </script>
-</header>
+        <script>
+        function displayCurrentDate() {
+            var currentDateElement = document.getElementById('currentDate');
 
+            var currentDate = new Date();
+            var day = currentDate.getDate();
+            var month = currentDate.getMonth() + 1; // Months are zero-based
+            var year = currentDate.getFullYear();
 
+            var formattedDate = day + '/' + month + '/' + year;
+
+            currentDateElement.textContent = '' + formattedDate;
+        }
+
+        // Panggil fungsi untuk menampilkan tanggal saat halaman dimuat
+        window.onload = displayCurrentDate;
+    </script>
 <main>
     <section>
-        <h2>Clown Host Beta - Main Menu</h2>
-        <center><p><button class="submit-button"><a style="text-decoration:none; color:#c4c416;" href="/office.html">Microsoft Office Auto KMS Activator</a></button>
-            <button class="submit-button"><a style="text-decoration:none; color:#c4c416;" href="/jailbreak">PS4 9.00 Menu</a></button>
-             <button class="submit-button"><a style="text-decoration:none; color:#c4c416;" href="/jb">PS4 9.00 Auto exploit</a></button></p></center>
-    </section>
-    <section>
-        <h2>Contact</h2>
-<p>You can contact me at: johnton211@gmail.com</p>
-<p>Need a tutorial office? <a href="/win11.html" target="_blank">How to use KMS Auto Activator</a></p>
+        Clown Host Beta - Main Menu
+<p style="text-align:center;">
+        <a href="/office.html"><button class="submit-button">Microsoft Office Auto KMS Activator</button></a>
+        <a href="/jailbreak"><button class="submit-button">PS4 9.00 Menu</button></a>
+        <a href="/jb"><button class="submit-button">PS4 9.00 Auto exploit</button></a>
+</p>
     </section>
 </main>
-
 <footer>
-    &copy; 2024 Designed by Clown King
+This website created and designed by:<b style="color:red;"> Clown King</b>
+<p>You can contact me at: <b style="color:red;">johnton211@gmail.com</b></p>
 </footer>
 <b><div id="clock"></div></b>
 </body>
