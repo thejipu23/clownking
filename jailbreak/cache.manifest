@@ -30,6 +30,7 @@ payloads/kexploit-launcher-900.js
 payloads/mira-900.js
 payloads/netcat-900.js
 payloads/ps4debug.js
+payloads/WebRTE.js
 payloads/whos-that-southbridge.js
 webkit-9.00/exploit.js
 webkit-9.00/malloc.js
