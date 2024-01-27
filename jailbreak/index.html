@@ -106,13 +106,57 @@
     <title>Clown Host | PS4 9.00 Exploit</title>
 </head>
 <body>
+ <script>
+    window.addEventListener('load', function () {
+      var hoverText = document.getElementById('hover-text');
+      var cacheStatusText = document.getElementById('cache-status');
+
+      // Periksa apakah browser mendukung cache
+      if ('applicationCache' in window) {
+        var cache = window.applicationCache;
+
+        // Periksa status cache saat ini
+        function updateCacheStatus() {
+          var progress = (cache.status / 7) * 100; // 7 adalah jumlah status cache yang mungkin
+          cacheStatusText.innerHTML = 'Caching ' + progress.toFixed(2) + '% completed';
+
+          if (cache.status === cache.UNCACHED || cache.status === cache.OBSOLETE) {
+            // Jika cache belum dimuat atau sudah kadaluarsa, beri tahu pengguna
+            alert('Cache tidak dapat dimuat atau sudah kadaluarsa.');
+          } else if (cache.status === cache.UPDATEREADY) {
+            // Jika ada pembaruan cache, minta browser untuk me-reload aplikasi
+            if (confirm('Aplikasi telah diperbarui. Muat ulang sekarang?')) {
+              cache.swapCache();
+              location.reload();
+            }
+          }
+        }
+
+        // Perbarui status setiap kali terjadi perubahan
+        cache.addEventListener('checking', updateCacheStatus);
+        cache.addEventListener('downloading', updateCacheStatus);
+        cache.addEventListener('progress', updateCacheStatus);
+        cache.addEventListener('updateready', updateCacheStatus);
+
+        // Periksa status saat pertama kali memuat halaman
+        updateCacheStatus();
+      } else {
+        alert('Browser ini tidak mendukung cache manifest.');
+      }
+    });
+
+    function changeTextAndStatus(newText) {
+      var hoverText = document.getElementById('hover-text');
+      hoverText.innerHTML = newText;
+    }
+
+    function resetText() {
+      var hoverText = document.getElementById('hover-text');
+      hoverText.innerHTML = "Status";
+    }
+  </script>
 <div class="element-dengan-garis">
 <span class="title" style="text-align:center;">Clown King Host 9.00 fw</span>
-</div>
-<div id="progresscon">
-<div id="progressbar">
-<span id="progressbarpc"></span>
-</div>
 </div>
    <center><p id="hover-text">Status</p></center>
     <div class="dropdown-container">
@@ -169,55 +213,6 @@
     // Call the function to set the initial time
     updateClock();
 </script>
- <script>
-    window.addEventListener('load', function () {
-      var hoverText = document.getElementById('hover-text');
-      var cacheStatusText = document.getElementById('cache-status');
-
-      // Periksa apakah browser mendukung cache
-      if ('applicationCache' in window) {
-        var cache = window.applicationCache;
-
-        // Periksa status cache saat ini
-        function updateCacheStatus() {
-          var progress = (cache.status / 7) * 100; // 7 adalah jumlah status cache yang mungkin
-          cacheStatusText.innerHTML = 'Caching ' + progress.toFixed(2) + '% completed';
-
-          if (cache.status === cache.UNCACHED || cache.status === cache.OBSOLETE) {
-            // Jika cache belum dimuat atau sudah kadaluarsa, beri tahu pengguna
-            alert('Cache tidak dapat dimuat atau sudah kadaluarsa.');
-          } else if (cache.status === cache.UPDATEREADY) {
-            // Jika ada pembaruan cache, minta browser untuk me-reload aplikasi
-            if (confirm('Aplikasi telah diperbarui. Muat ulang sekarang?')) {
-              cache.swapCache();
-              location.reload();
-            }
-          }
-        }
-
-        // Perbarui status setiap kali terjadi perubahan
-        cache.addEventListener('checking', updateCacheStatus);
-        cache.addEventListener('downloading', updateCacheStatus);
-        cache.addEventListener('progress', updateCacheStatus);
-        cache.addEventListener('updateready', updateCacheStatus);
-
-        // Periksa status saat pertama kali memuat halaman
-        updateCacheStatus();
-      } else {
-        alert('Browser ini tidak mendukung cache manifest.');
-      }
-    });
-
-    function changeTextAndStatus(newText) {
-      var hoverText = document.getElementById('hover-text');
-      hoverText.innerHTML = newText;
-    }
-
-    function resetText() {
-      var hoverText = document.getElementById('hover-text');
-      hoverText.innerHTML = "Status";
-    }
-  </script>
 <footer>
   <b style="color: yellow;">Compiled by</b>: Clown King
   <p><b style="color: yellow;">Credits</b>: PS4Linux, Sleirsgoevy, ChendoChap, and many more for PS-JB scene.</p>
