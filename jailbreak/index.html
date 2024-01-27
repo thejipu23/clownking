@@ -136,7 +136,7 @@ document.getElementById("progresscon").style.display="none";
         // Periksa status cache saat ini
         function updateCacheStatus() {
           var progress = (cache.status / 7) * 100; // 7 adalah jumlah status cache yang mungkin
-          cacheStatusText.innerHTML = 'Caching' + progress.toFixed(2) + '% completed';
+          cacheStatusText.innerHTML = 'Caching ' + progress.toFixed(2) + '% completed';
 
           if (cache.status === cache.UNCACHED || cache.status === cache.OBSOLETE) {
             // Jika cache belum dimuat atau sudah kadaluarsa, beri tahu pengguna
