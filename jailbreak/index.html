@@ -94,7 +94,7 @@ alert("Caching started! Press OK and check progress on the bottom of the page.")
 };
 window.applicationCache.onprogress = function(a)
 {
-document.getElementById("hover-text").innerHTML="<h3>Caching"+(Math.round(100*(a.loaded/a.total)))+"% Completed</h3>";
+document.getElementById("hover-text").innerHTML="<h3>Caching "+(Math.round(100*(a.loaded/a.total)))+"% Completed</h3>";
 };
 window.applicationCache.oncached = window.applicationCache.onupdateready = function()
 {
