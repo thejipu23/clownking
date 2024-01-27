@@ -116,7 +116,7 @@ alert("Caching started! Press OK and check progress on the bottom of the page.")
 };
 window.applicationCache.onprogress = function(a)
 {
-document.getElementById("hover-text").innerHTML="<h3>Caching Status: "+(Math.round(100*(a.loaded/a.total)))+"% Completed</h3>";
+document.getElementById("hover-text").innerHTML="<h3>Caching"+(Math.round(100*(a.loaded/a.total)))+"% Completed</h3>";
 };
 window.applicationCache.oncached = window.applicationCache.onupdateready = function()
 {
@@ -176,7 +176,7 @@ document.getElementById("progresscon").style.display="none";
 <div class="element-dengan-garis">
 <span class="title" style="text-align:center;">Clown King Host 9.00 fw</span>
 </div>
-   <center><p id="hover-text">Status</p></center>
+   <h3><center><p id="hover-text">Status</p></center></h3>
     <div class="dropdown-container">
         <select id="selectOptions">
             <option value="jb.html#p0=payloads/mira-900.js&p1=payloads/goldhen-2.4b14.js">GoldHEN 2.4b14</option>
