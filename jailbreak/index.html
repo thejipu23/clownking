@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html manifest="cache.appcache">
+<html manifest="cache.manifest">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -109,6 +109,21 @@
     <title>Clown Host | PS4 9.00 Exploit</title>
 </head>
 <body>
+<script>
+window.applicationCache.ondownloading = function()
+{
+alert("Caching started! Press OK and check progress on the bottom of the page.")
+};
+window.applicationCache.onprogress = function(a)
+{
+document.getElementById("hover-text").innerHTML="<h3>Caching Status: "+(Math.round(100*(a.loaded/a.total)))+"% Completed</h3>";
+};
+window.applicationCache.oncached = window.applicationCache.onupdateready = function()
+{
+alert("Page cached successfully. Press OK.")
+document.getElementById("progresscon").style.display="none";
+};
+</script>
  <script>
     window.addEventListener('load', function () {
       var hoverText = document.getElementById('hover-text');
@@ -121,7 +136,7 @@
         // Periksa status cache saat ini
         function updateCacheStatus() {
           var progress = (cache.status / 7) * 100; // 7 adalah jumlah status cache yang mungkin
-          cacheStatusText.innerHTML = 'Caching ' + progress.toFixed(2) + '% completed';
+          cacheStatusText.innerHTML = 'Caching' + progress.toFixed(2) + '% completed';
 
           if (cache.status === cache.UNCACHED || cache.status === cache.OBSOLETE) {
             // Jika cache belum dimuat atau sudah kadaluarsa, beri tahu pengguna
